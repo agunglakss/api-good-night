@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_02_28_104709) do
+ActiveRecord::Schema[7.1].define(version: 2025_02_28_110632) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "sleep_trackings", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "clock_in", null: false
+    t.datetime "clock_out"
+    t.integer "duration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "clock_in"], name: "index_tracking_logs_on_user_id_and_clock_in"
+    t.index ["user_id"], name: "index_sleep_trackings_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
@@ -22,4 +33,5 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_28_104709) do
     t.index ["api_token"], name: "index_api_token"
   end
 
+  add_foreign_key "sleep_trackings", "users"
 end
