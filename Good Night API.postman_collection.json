@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "b705f5dd-3143-498c-83ed-d16d602b44a1",
+		"name": "Good Night API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "9879698"
+	},
+	"item": [
+		{
+			"name": "Clock In",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "API-TOKEN",
+						"value": "09d2f853f6980e7ba44acc1a32154c4782213d76",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3000/api/v1/sleep-tracking/clock-in"
+			},
+			"response": []
+		},
+		{
+			"name": "Follow",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "API-TOKEN",
+						"value": "09d2f853f6980e7ba44acc1a32154c4782213d76",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3000/api/v1/friendship/follow/11"
+			},
+			"response": []
+		},
+		{
+			"name": "Unfollow",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "API-TOKEN",
+						"value": "09d2f853f6980e7ba44acc1a32154c4782213d76",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3000/api/v1/friendship/unfollow/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Following",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "API-TOKEN",
+						"value": "09d2f853f6980e7ba44acc1a32154c4782213d76",
+						"type": "text"
+					}
+				],
+				"url": "localhost:3000/api/v1/sleep-tracking/following"
+			},
+			"response": []
+		},
+		{
+			"name": "Clock Out",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "API-TOKEN",
+						"value": "6f7855f0f774095315cab7befc772807cdf18100",
+						"type": "text"
+					}
+				],
+				"url": "localhost:3000/api/v1/sleep-tracking/clock-out"
+			},
+			"response": []
+		}
+	]
+}
