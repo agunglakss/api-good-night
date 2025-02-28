@@ -21,6 +21,7 @@ default: &default
 
 development:
   <<: *default
+  username: <%= ENV['USERNAME'] %>
   database: api_good_night_development
 
   # The specified database role being used to connect to PostgreSQL.
