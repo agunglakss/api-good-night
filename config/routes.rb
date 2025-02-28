@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       post 'sleep-tracking/clock-in', to: 'sleep_trackings#clock_in'
       patch 'sleep-tracking/clock-out', to: 'sleep_trackings#clock_out'
+      get 'sleep-tracking/following', to: 'sleep_trackings#following'
       
       post 'friendship/follow/:user_id', to: 'friendships#follow'
       delete 'friendship/unfollow/:user_id', to: 'friendships#unfollow'
