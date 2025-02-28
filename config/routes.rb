@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       patch 'sleep-tracking/clock-out', to: 'sleep_trackings#clock_out'
       
       post 'friendship/follow/:user_id', to: 'friendships#follow'
+      delete 'friendship/unfollow/:user_id', to: 'friendships#unfollow'
     end
   end
 
