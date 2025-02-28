@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_02_28_110632) do
+ActiveRecord::Schema[7.1].define(version: 2025_02_28_131149) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "friendships", force: :cascade do |t|
+    t.bigint "follower_id", null: false
+    t.bigint "followed_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["followed_id"], name: "index_friendships_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_friendships_on_follower_id_and_followed_id", unique: true
+    t.index ["follower_id"], name: "index_friendships_on_follower_id"
+  end
 
   create_table "sleep_trackings", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -33,5 +43,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_28_110632) do
     t.index ["api_token"], name: "index_api_token"
   end
 
+  add_foreign_key "friendships", "users", column: "followed_id"
+  add_foreign_key "friendships", "users", column: "follower_id"
   add_foreign_key "sleep_trackings", "users"
 end
