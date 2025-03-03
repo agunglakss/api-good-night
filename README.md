@@ -35,6 +35,7 @@
    ```bash
    rails db:create
    rails db:migrate
+   rails db:seed
    ```
 
 **Start Redis server (in a new terminal):**
